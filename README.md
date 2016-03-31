@@ -1,4 +1,4 @@
-# angular-webpack
+# angular-webpack-bdd-kit
 
 [![Dependency Status](https://david-dm.org/preboot/angular-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular-webpack/dev-status.svg)](https://david-dm.org/preboot/angular-webpack#info=devDependencies)
 
@@ -13,7 +13,7 @@ This workflow serves as a starting point for building Angular 1.x applications u
 * Production builds with cache busting.
 * Testing environment using karma to run tests and jasmine as the framework.
 * Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
+* No gulp and no grunt, just npm and bash scripts.
 
 >Warning: Make sure you're using the latest version of Node.js and NPM
 
@@ -52,14 +52,28 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 ## Dependencies
 
 What you need to run this app:
-* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
+* Node Version Manager (See [nvm](https://github.com/creationix/nvm)).
+* [direnv](http://direnv.net) for environment control/switching.
 * Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
 
 ## Installing
 
 * `fork` this repo
 * `clone` your fork
+* `nvm install` # install the version specified in `.nvmrc`
+* `nvm use`     # use the version of node in `.nvmrc` (should happen automatically when `direnv` is enabled).
 * `npm install` to install all dependencies
+
+NB: for `direnv` the following `~/.direnvrc` will help:
+
+``` bash
+#!/usr/bin/env bash
+
+nvm() {
+  . ~/.nvm/nvm.sh
+  nvm "$@"
+}
+```
 
 ## Running the app
 

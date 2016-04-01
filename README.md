@@ -1,6 +1,6 @@
 # angular-webpack-bdd-kit
 
-[![Dependency Status](https://david-dm.org/preboot/angular-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular-webpack/dev-status.svg)](https://david-dm.org/preboot/angular-webpack#info=devDependencies)
+[![Dependency Status](https://david-dm.org/ldeck/angular-webpack/status.svg)](https://david-dm.org/ldeck/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/ldeck/angular-webpack/dev-status.svg)](https://david-dm.org/ldeck/angular-webpack#info=devDependencies)
 
 A complete, yet simple, starter for Angular using Webpack.
 
@@ -13,7 +13,7 @@ This workflow serves as a starting point for building Angular 1.x applications u
 * Production builds with cache busting.
 * Testing environment using karma to run tests and jasmine as the framework.
 * Code coverage when tests are run.
-* No gulp and no grunt, just npm and bash scripts.
+* No gulp and no grunt, just npm (and bash) scripts.
 
 >Warning: Make sure you're using the latest version of Node.js and NPM
 
@@ -54,20 +54,20 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 What you need to run this app:
 * Node Version Manager (See [nvm](https://github.com/creationix/nvm)).
 * [direnv](http://direnv.net) for environment control/switching.
-* Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
+* Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+).
 
 ## Installing
 
-* `fork` this repo
-* `clone` your fork
-* `nvm install` # install the version specified in `.nvmrc`
+* `fork` this repo.
+* `clone` your fork.
+* `nvm install` # install the version specified in `.nvmrc`.
 * `nvm use`     # use the version of node in `.nvmrc` (should happen automatically when `direnv` is enabled).
-* `npm install` to install all dependencies
+* `npm install` to install all dependencies.
 
 NB: for `direnv` the following `~/.direnvrc` will help:
 
 ``` bash
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 nvm() {
   . ~/.nvm/nvm.sh
@@ -88,12 +88,25 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ### Build files
 
-* single run: `npm run build`
-* build files and watch: `npm run watch`
+* single run: `npm run build`.
+* build files and watch: `npm run watch`.
 
 ## Testing
 
-#### 1. Unit Tests
+#### 1. End to End
+
+* Run all acceptance and unit tests: `npm test-all`.
+
+#### 2. Acceptance Tests (BDD)
+
+* Cucumber features (with express server): `bin/tests`.
+* Cucumber features (with separate express server):
+  * `npm start` and `npm run test-bdd`.
+  * `npm start` and `npm run test-bdd-wip`.
+  * `npm start` and `npm run test-watch-bdd-wip`.
+
+
+#### 3. Unit Tests
 
 * single run: `npm test`
 * live mode (TDD style): `npm run test-watch`

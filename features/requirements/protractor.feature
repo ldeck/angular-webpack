@@ -7,7 +7,7 @@ Feature: Running Cucumber with Protractor
   Scenario: Running Cucumber with Protractor
     Given I run Cucumber with Protractor
     Then it should still do normal tests
-    Then it should expose the correct global variables
+    And it should expose the correct global variables
 
   @dev
   Scenario: Wrapping WebDriver

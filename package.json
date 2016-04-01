@@ -6,8 +6,10 @@
     "build": "node_modules/.bin/rimraf dist && node_modules/.bin/webpack --bail --progress --profile",
     "server": "node node_modules/.bin/webpack-dev-server --history-api-fallback --inline --progress",
     "test": "node_modules/.bin/karma start",
-    "test-all": "npm run test && npm run test-bdd",
-    "test-bdd": "bin/tests",
+    "test-all": "npm run test && bin/tests",
+    "test-bdd": "node_modules/.bin/protractor protractor.config.js",
+    "test-bdd-wip": "npm run test-bdd -- --cucumberOpts.tags @wip",
+    "test-watch-bdd-wip": "node_modules/.bin/watchy -w features,src -- bin/queuebdd",
     "test-watch": "node_modules/.bin/karma start --auto-watch --no-single-run",
     "start": "npm run server"
   },
@@ -64,6 +66,7 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",
+    "watchy": "^0.6.6",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   }

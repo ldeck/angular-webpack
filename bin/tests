@@ -38,8 +38,8 @@ done
 
 echo "$PID" > app.pid
 
-## run tests
-background 'cucumber.js -S'
+## run cucumber tests
+background 'npm run test-bdd'
 
 
 reap || echo ">> Oops! Some test jobs failed."
